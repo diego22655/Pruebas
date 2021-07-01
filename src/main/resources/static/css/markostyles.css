@@ -1,0 +1,105 @@
+h3 {
+	color: black;
+	font-size: 20px;
+	font-family: 'Cabin', sans-serif;
+	text-align: left;
+	margin-top: -330px;
+}
+
+.cardteacher {
+	position:inherit;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, .125);
+	border-radius: 1rem;
+	border-color:lightgreen;
+	width: 350px;
+	box-shadow: 5px 5px 5px lightgreen;
+	margin-left:2em;
+	margin-top: -100px;
+}
+
+.cardteacher2 {
+	position:inherit;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, .125);
+	border-radius: 1rem;
+	border-color:lightgreen;
+	width: 350px;
+	box-shadow: 5px 5px 5px lightgreen;
+	margin-left:2em;
+	margin-top: 500px;
+}
+
+.cardtitle{
+	position:static;
+	font-family: 'Arial';
+	text-align: center;
+}
+.btnSubject{
+	background-color: Green;
+	border-radius: 2rem;
+	width: 200px;
+	position:relative;
+	height: 200px;
+	font-style: oblique;
+	font-size:26px;
+	font-family:Aleo;
+}
+.myiconsSubject {
+	width: 150px;
+	height: 150px;
+	display: block;
+	margin-left: 105px;
+	margin-top: 60px;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+
+.subjectchoose{
+	position:relative;
+	font-family: 'Arial';
+	text-align: left;
+	margin-top: 200px;
+}
+.btnteacher{
+	background-color: Yellow;
+	border-radius: 10px;
+	width:120px;
+	position:relative;
+	height: 40px;
+	font-style: oblique;
+	font-size:14px;
+	font-family:Aleo;
+	color: black;
+	margin-left: 25px;
+}
+.h2teacher{
+	color: #cabf3c;
+	font-family: 'Cabin', sans-serif;
+	text-align: left;
+	margin-left:2em;
+	margin-top:1em
+}
+.h2teacher:hover{
+	color:lightblue;
+}
+
+.text-Reservation{
+	position:static;
+	font-family: 'Arial';
+	text-align: left;
+}
+.imageteacher{
+	height:200px
+}
+
