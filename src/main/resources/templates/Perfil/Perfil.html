@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div class="card text-center" style="width: 40rem;background-color:lightblue; margin-left:50rem;position:absolute;">
+		<div class="card-header">Scheadule</div>
+		<div class="card-body">
+			<table class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Date</th>
+
+					</tr>
+				</thead>
+				<tbody th:each="reservation : ${reservations}">
+					<tr >
+						<th th:text="${reservation.date}">1</th>
+						<td><label class="form-check-label" for="flexCheckChecked"></label></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

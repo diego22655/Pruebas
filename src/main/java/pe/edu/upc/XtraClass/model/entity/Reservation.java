@@ -38,7 +38,7 @@ public class Reservation {
 	private Date date;
 	
 	@ManyToOne
-	@JoinColumn(name="student_id", nullable=false)
+	@JoinColumn(name="student_id")
 	private Student student;
 	
 	@ManyToOne
