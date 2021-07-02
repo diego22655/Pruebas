@@ -46,7 +46,7 @@
 						<th id="day" scope="row" th:text="${scheadule.day}">1</th>
 						<td th:text="${scheadule.starthour}"></td>
 						<td th:text="${scheadule.finishhour}"></td>
-						<td><a class="btn btn-primary" th:data-date="${scheadule.day}" onclick="getComment(event)"></a></td>
+						<td><a class="btn btn-primary" onclick="scheadule"></a></td>
 						<td><label class="form-check-label" for="flexCheckChecked"></label></td>
 					</tr>
 				</tbody>
@@ -55,7 +55,7 @@
 	</div>
 	
 	<div>
-		<input id="teacherID" style="margin-left: 500px;" th:field="${teacher.id}" disabled="disabled">
+		<input style="margin-left: 500px;" th:field="${teacher.id}" disabled="disabled">
 		<input id="mytext" style="margin-left: 500px;" disabled="disabled">
 	</div>
 
@@ -63,34 +63,9 @@
 	<footer th:replace="layout/layout :: footer"></footer>
 </body>
 <script>
-	function getComment(event){
-		console.log(event);
-		date=event.target.dataset.date;
-		teacherID=document.getElementById("teacherID").value;
-		console.log(teacherID);
-
-		if (confirm('hola')) {
-			  // Save it!
-		fetch('/info/Reservations/confirm', {
-		    method: 'POST',
-		    headers: {
-		      'Accept': 'application/json',
-		      'Content-Type': 'application/json'
-		    },
-		    body: JSON.stringify({date, teacherID})
-		  })
-		  .then(res => {
-			  if (res.status == 200) {
-			        window.location = '/perfil';
-			    }
-		    }
-		  )
-			} else {
-			  // Do nothing!
-			  console.log('Thing was not saved to the database.');
-			}
-
-		
+	function scheadule(){
+		var x = document.getElementById("day").text;
+		document.getElementById("mytext").value = x;
 	}
 </script>
 </html>

@@ -1,10 +1,6 @@
 package pe.edu.upc.XtraClass.controller;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,16 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import pe.edu.upc.XtraClass.model.entity.Reservation;
 import pe.edu.upc.XtraClass.model.entity.Scheadule;
-import pe.edu.upc.XtraClass.model.entity.Student;
 import pe.edu.upc.XtraClass.model.entity.Teacher;
-import pe.edu.upc.XtraClass.model.util.RequestReservation;
-import pe.edu.upc.XtraClass.services.ReservationService;
 import pe.edu.upc.XtraClass.services.ScheaduleService;
 import pe.edu.upc.XtraClass.services.TeacherService;
 
@@ -36,9 +26,6 @@ public class ReservationController {
 	
 	@Autowired
 	private ScheaduleService scheaduleService;
-	
-	@Autowired
-	private ReservationService reservationService;
 	
 	@GetMapping("Reservations/{id}")
 	public String viewTeacherGet(Model model, @ModelAttribute("teacherSearch") Teacher teacherSearch, 
@@ -58,29 +45,6 @@ public class ReservationController {
 		}
 		
 		return "redirect:/Reservations";
-	}
-	
-	@PostMapping("Reservations/confirm")
-	public String confirmReservation(Model model, @RequestBody RequestReservation body) {
-		try {
-			System.out.print(body);
-			Reservation objReservation = new Reservation();
-			Teacher objTeacher = new Teacher();
-			Student objStudent = new Student();
-			DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
-			Date date = format.parse(body.getDate());
-			objReservation.setDate(date);
-			objTeacher.setId(Integer.parseInt(body.getTeacherID()));
-			objReservation.setTeacher(objTeacher);
-			objStudent.setId(1);
-			objReservation.setStudent(objStudent);
-			reservationService.create(objReservation);
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.err.println(e.getMessage());
-		}
-		
-		return "redirect:/perfil";
 	}
 	
 //	@GetMapping("{id}")		// GET: /reservation/{id}
