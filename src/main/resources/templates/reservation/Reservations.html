@@ -47,6 +47,9 @@
 						<td id="starthour" th:text="${scheadule.starthour}"></td>
 						<td id="finishhour" th:text="${scheadule.finishhour}"></td>
 						<td><a class="btn btn-primary" th:data-date="${scheadule.day}" th:data-starthour="${scheadule.starthour}" th:data-finishhour="${scheadule.finishhour}" onclick="getComment(event)"></a></td>
+						<td th:text="${scheadule.starthour}"></td>
+						<td th:text="${scheadule.finishhour}"></td>
+						<td><a class="btn btn-primary" onclick="scheadule"></a></td>
 						<td><label class="form-check-label" for="flexCheckChecked"></label></td>
 					</tr>
 				</tbody>
@@ -55,7 +58,7 @@
 	</div>
 	
 	<div>
-		<input id="teacherID" style="margin-left: 500px;" th:field="${teacher.id}" disabled="disabled">
+		<input style="margin-left: 500px;" th:field="${teacher.id}" disabled="disabled">
 		<input id="mytext" style="margin-left: 500px;" disabled="disabled">
 	</div>
 
@@ -91,9 +94,13 @@
 			} else {
 			  // Do nothing!
 			  console.log('Thing was not saved to the database.');
+				}
 			}
 
 		
+	function scheadule(){
+		var x = document.getElementById("day").text;
+		document.getElementById("mytext").value = x;
 	}
 </script>
 </html>
