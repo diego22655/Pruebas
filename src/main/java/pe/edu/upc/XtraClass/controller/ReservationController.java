@@ -70,6 +70,8 @@ public class ReservationController {
 			DateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 			Date date = format.parse(body.getDate());
 			objReservation.setDate(date);
+			objReservation.setStartTime(body.getStarthour());
+			objReservation.setEndTime(body.getFinishhour());
 			objTeacher.setId(Integer.parseInt(body.getTeacherID()));
 			objReservation.setTeacher(objTeacher);
 			objStudent.setId(1);

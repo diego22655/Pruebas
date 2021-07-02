@@ -32,12 +32,12 @@ public class Qualification {
 		this.id = id;
 	}
 
-	public String getNameClassification() {
+	public String getNameQualification() {
 		return nameQualification;
 	}
 
-	public void setNameClassification(String nameClassification) {
-		nameQualification = nameClassification;
+	public void setNameQualification(String nameQualification) {
+		this.nameQualification = nameQualification;
 	}
 
 	public Reservation getReservation() {

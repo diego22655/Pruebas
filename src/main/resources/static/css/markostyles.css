@@ -40,6 +40,34 @@ h3 {
 	margin-top: 500px;
 }
 
+.cardschedule {
+	position:inherit;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	word-wrap: break-word;
+	background-color: #fff;
+	background-clip: border-box;
+	border: 1px solid rgba(0, 0, 0, .125);
+	border-radius: 1rem;
+	border-color:lightgreen;
+	width: 350px;
+	box-shadow: 5px 5px 5px lightgreen;
+	margin-left: -100px;
+}
+
+.imageschedule{
+	margin-top: 10px;
+	margin-left: 50px;
+	width: 250px;
+	height: 200px;
+}
+
+#buttomschedule{
+	margin-left: 85px;
+	width: 150px;
+}
+
 .cardtitle{
 	position:static;
 	font-family: 'Arial';
@@ -71,6 +99,14 @@ h3 {
 	text-align: left;
 	margin-top: 200px;
 }
+
+.scheduletitle{
+	position:relative;
+	font-family: 'Arial';
+	text-align: left;
+	margin-top: 200px;
+}
+
 .btnteacher{
 	background-color: Yellow;
 	border-radius: 10px;

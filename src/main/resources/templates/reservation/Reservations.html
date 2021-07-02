@@ -44,9 +44,9 @@
 				<tbody th:each="scheadule : ${scheadules}">
 					<tr >
 						<th id="day" scope="row" th:text="${scheadule.day}">1</th>
-						<td th:text="${scheadule.starthour}"></td>
-						<td th:text="${scheadule.finishhour}"></td>
-						<td><a class="btn btn-primary" th:data-date="${scheadule.day}" onclick="getComment(event)"></a></td>
+						<td id="starthour" th:text="${scheadule.starthour}"></td>
+						<td id="finishhour" th:text="${scheadule.finishhour}"></td>
+						<td><a class="btn btn-primary" th:data-date="${scheadule.day}" th:data-starthour="${scheadule.starthour}" th:data-finishhour="${scheadule.finishhour}" onclick="getComment(event)"></a></td>
 						<td><label class="form-check-label" for="flexCheckChecked"></label></td>
 					</tr>
 				</tbody>
@@ -66,6 +66,8 @@
 	function getComment(event){
 		console.log(event);
 		date=event.target.dataset.date;
+		starthour=event.target.dataset.starthour;
+		finishhour=event.target.dataset.finishhour;
 		teacherID=document.getElementById("teacherID").value;
 		console.log(teacherID);
 
@@ -75,9 +77,10 @@
 		    method: 'POST',
 		    headers: {
 		      'Accept': 'application/json',
-		      'Content-Type': 'application/json'
+		      'Content-Type': 'application/json',
+		      'Cookie': 'JSESSIONID=AA3997E225E874A992C07CD79CEEFCE7'
 		    },
-		    body: JSON.stringify({date, teacherID})
+		    body: JSON.stringify({date, teacherID, starthour, finishhour})
 		  })
 		  .then(res => {
 			  if (res.status == 200) {

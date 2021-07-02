@@ -26,12 +26,10 @@ public class Reservation {
 	private Integer id;
 	
 	@Column(name = "startTime")
-	@Temporal(TemporalType.TIME)
-	private Date startTime; 
+	private String startTime; 
 	
 	@Column(name = "endTime")
-	@Temporal(TemporalType.DATE)
-	private Date endTime;
+	private String endTime;
 	
 	@Column(name = "date")
 	@Temporal(TemporalType.DATE)
@@ -68,19 +66,19 @@ public class Reservation {
 		this.id = id;
 	}
 
-	public Date getStartTime() {
+	public String getStartTime() {
 		return startTime;
 	}
 
-	public void setStartTime(Date startTime) {
+	public void setStartTime(String startTime) {
 		this.startTime = startTime;
 	}
 
-	public Date getEndTime() {
+	public String getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(Date endTime) {
+	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 	}
 
@@ -131,5 +129,7 @@ public class Reservation {
 	public void setScheadule(Scheadule scheadule) {
 		this.scheadule = scheadule;
 	}
+
+	
 	
 }

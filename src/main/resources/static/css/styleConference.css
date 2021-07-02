@@ -18,15 +18,15 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	margin-top: 800px;
+	margin-top: 600px;
 	margin-left: 1000px;
 	padding: 3%;
 	position: absolute;
 }
 
 .video {
-	margin-top: 5px;
-	margin-left: 100px;
+	margin-top: -100px;
+	margin-left: 200px;
 	width: 1500px;
 	height: 950px;
 	position: absolute;
